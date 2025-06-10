@@ -1,2 +1,3 @@
-import pandas as pd
-import streamli as pd
+import panda as pd
+import streamlit as pd
+
