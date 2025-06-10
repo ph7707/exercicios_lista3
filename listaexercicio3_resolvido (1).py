@@ -117,15 +117,14 @@ st.dataframe(df)
 
 projetos = ["Projeto1", "Projeto2", "Projeto3", "Projeto4", "Projeto5"]
 
-fig, ax = plt.subplots()
-plt.figure(figsize=(10,6))
+fig, ax = plt.subplots(figsize=(10,6))
 for projeto in projetos:
-    plt.plot(df["Data"], df[projeto], marker="o", label=projeto, ax=ax)
+    ax.plot(df["Data"], df[projeto], marker="o", label=projeto)
 
-plt.title("Evolução dos Fluxos de Caixa dos Projetos")
-plt.xlabel("Tempo (Ano-Mês)")
-plt.ylabel("Valor (R$)")
-plt.legend(title="Projetos")
-plt.grid(True)
-plt.tight_layout()
+ax.set_title("Evolução dos Fluxos de Caixa dos Projetos")
+ax.set_xlabel("Tempo (Ano-Mês)")
+ax.set_ylabel("Valor (R$)")
+ax.legend(title="Projetos")
+ax.grid(True)
+fig.tight_layout()
 st.pyplot(fig)
